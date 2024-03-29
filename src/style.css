@@ -1,0 +1,62 @@
+.container {
+  border: 1px solid black;
+  padding: 150px;
+  margin: 0 auto;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.wordInput {
+  height: 40px;
+  width: 350px;
+  border: none;
+  border-bottom: 3px solid rgb(135, 97, 224);
+  outline: none;
+  font-size: 15px;
+}
+
+button {
+  height: 40px;
+  width: 90px;
+  margin-left: 10px;
+  font-size: 15px;
+  background-color: hsla(271, 55%, 61%, 0.697);
+  border-radius: 5px;
+  border: none;
+  box-shadow: 2px 3px 3px hsla(0, 2%, 10%, 0.641);
+}
+
+.result h3 {
+  font-size: 30px;
+}
+
+.result .word {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fa-solid {
+  margin-top: 40px;
+  color: hsla(271, 55%, 61%, 0.697);
+}
+
+.wordDetails {
+  margin-top: -30px;
+  display: flex;
+  gap: 10px;
+  color: rgb(56, 54, 54);
+}
+
+.wordMeaning {
+  color: rgb(18, 18, 18);
+}
+
+.wordExample {
+  font-style: italic;
+  border-left: 5px solid hsla(271, 55%, 61%, 0.697);
+  padding-left: 20px;
+  margin-top: 30px;
+}
