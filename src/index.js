@@ -3,9 +3,10 @@ const result = document.getElementById("result");
 const sound = document.getElementById("sound");
 const btn = document.getElementById("btn");
 
-btn.addEventListener("click", () => {
+const searchFunction = (event) => {
+  event.preventDefault();
   let inpWord = document.getElementById("inp-word").value;
-  console.log(inpWord);
+  console.log("input word:", inpWord);
   fetch(`${url}${inpWord}`)
     .then((response) => response.json())
     .then((data) => {
@@ -17,23 +18,26 @@ btn.addEventListener("click", () => {
           <i class="fa-solid fa-volume-high"></i>
         </div>
         <div class="wordDetails">
-          <p>${data[0].meaning[0].partOfSpeech}</p>
-          <p>${data[0].phonetic}</p>
+          <p>${data[0].meanings[0].partOfSpeech}</p>
+          
         </div>
         <div class="wordMeaning">
           <p>
-            ${data[0].meanings[0].definitions[0].defintion}
+            ${data[0].meanings[0].definitions[0].definition}
           </p>
           <p class="wordExample">
-            ${data[0].meanings[0].definitions[0].example || ""}
+            ${data[0].meanings[0].definitions[0]?.example && ""}
           </p>
     `;
-      sound.setAttribute("src", `https:${data[0].phonetics[0].audio}`);
+      // sound.setAttribute("src", `https:${data[0].phonetics[0].audio}`);
     })
     .catch(() => {
       result.innerHTML = `<h3 class="error">Couldn't Find The Word</h3>`;
     });
-});
+};
+
+btn.addEventListener("click", searchFunction);
+
 function playSound() {
   sound.play();
 }
