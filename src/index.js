@@ -14,8 +14,7 @@ const searchFunction = (event) => {
       result.innerHTML = `
        <div class="word">
           <h3>${inpWord}</h3>
-          <button onclick="playSound()">
-          <i class="fa-solid fa-volume-high"></i>
+          
         </div>
         <div class="wordDetails">
           <p>${data[0].meanings[0].partOfSpeech}</p>
